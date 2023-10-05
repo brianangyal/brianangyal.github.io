@@ -1,0 +1,53 @@
+body {
+   	height: 100%;
+	font-family: Helvetica, Arial, sans-serif;
+	margin: auto;
+    background-image: url('img/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.header {
+	padding: 20px;
+	text-align: center;
+    color: white;
+}
+
+.nav-menu {
+    list-style-type: none;
+    padding: 20px;
+    margin: 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.nav-menu li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.nav-menu li:last-child {
+    margin-right: 0;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.nav-menu a:hover {
+    background-color: rgba(173, 216, 230, 0.5); /* 0.5 to add transparency */
+}
+
+/*        
+.projects-item {
+    margin: 20px;
+   	border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+*/
