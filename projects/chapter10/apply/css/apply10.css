@@ -1,7 +1,7 @@
 /*
-    Student Name Brian Angyal
+    Student Name: 
 	File Name: 
-	Current Date: 12/13/2023
+	Current Date: 
 */
 
 /* CSS reset */
@@ -52,29 +52,25 @@ button {
 .square {
     width: 200px;
     height: 200px;
-    background-color: #33091b;
+    background-color: #660b32;
     margin-left: 6%;
-	-webkit-animation-name: color;
-	animation-name: color;
+	-webkit-animation-name: text-animation;
+	animation-name: text-animation;
 	-webkit-animation-duration: 5s;
 	animation-duration: 5s;
 }
-
 .square:hover {
 	transform: translate(80px);
 }
-
 /* Animation */
 @-webkit-keyframes color {
 	from { background-color: #fbdae9; }
-	to { background-color: #660b32; }	
+	to { background-color: #660b32; }
 }
 @keyframes color {
 	from { background-color: #fbdae9; }
 	to { background-color: #660b32; }
 }
-
-
 /* Style rules for the footer */
 footer {
 	font-size: .90em;

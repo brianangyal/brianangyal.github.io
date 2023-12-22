@@ -20,6 +20,7 @@ body {
     display: flex;       /* Convert body into a flex container */
     flex-direction: column;  /* Arrange children (header, main, footer) vertically */
     min-height: 100vh;      /* Make sure the body occupies full viewport height */
+
 }
 
 /* BODY */
@@ -118,6 +119,6 @@ footer {
 
 /* FOOTER */
 
-
-
-
+li {
+	color: white;
+}
