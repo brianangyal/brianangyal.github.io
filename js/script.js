@@ -15,9 +15,14 @@ document.getElementById('enter-screen').addEventListener('click', () => {
     document.getElementById('enter-screen').style.display = 'none';
     video.style.display = 'block';
     document.querySelector('.content').style.display = 'block';
+    document.getElementById('mute-btn').style.display = 'block';
 
     video.play().catch((error) => {
         console.error("Playback failed:", error);
+    });
+
+    document.getElementById('mute-toggle').addEventListener('click', () => {
+        alert("no lol.");
     });
 
     fetch("https://lastfm-white-snow-97b9.brianbs297.workers.dev")
