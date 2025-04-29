@@ -78,7 +78,7 @@ html, body {
     margin-bottom: 6px;
 }
 
-#socials .social-links a {
+#socials .social-links a, p {
     color: red;
     text-decoration: none;
 }
