@@ -6,6 +6,11 @@ html, body {
     font-family: 'Poppins', sans-serif;
 }
 
+html.entered, body.entered {
+    overflow-y: auto;
+    height: auto;
+}
+
 #enter-screen {
     background: black;
     color: red;

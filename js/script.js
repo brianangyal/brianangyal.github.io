@@ -21,6 +21,9 @@ document.getElementById('enter-screen').addEventListener('click', () => {
     document.querySelector('.content').style.display = 'block';
     document.getElementById('mute-btn').style.display = 'block';
 
+    document.documentElement.classList.add('entered');
+    document.body.classList.add('entered');
+
     video.play().catch((error) => {
         console.error("Playback failed:", error);
     });
