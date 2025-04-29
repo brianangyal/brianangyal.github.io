@@ -1,51 +1,65 @@
 html, body {
-margin: 0;
-padding: 0;
-height: 100%;
-overflow: hidden;
-font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    font-family: sans-serif;
 }
 
 #enter-screen {
-background: black;
-color: red;
-font-size: 50px;
-text-align: center;
-line-height: 100vh;
-cursor: pointer;
-position: absolute;
-width: 100%;
-height: 100%;
-z-index: 2;
+    background: black;
+    color: red;
+    font-size: 50px;
+    text-align: center;
+    line-height: 100vh;
+    cursor: pointer;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
 }
 
 #video-bg {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-object-fit: cover;
-z-index: -1;
-display: none;
-}
-
-.overlay {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background: rgba(255, 255, 255, 0.2);
-z-index: 0;
-display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    display: none;
 }
 
 .content {
-position: relative;
-z-index: 1;
-text-align: center;
-padding-top: 20vh;
-color: black;
-display: none;
+    position: relative;
+    z-index: 1;
+    display: block;
+    text-align: left;
+    padding-top: 10vh;
+    color: black;
+  }
+
+.content section {
+    margin: 40px 0 40px 40px;
+    max-width: 400px;
+    background: linear-gradient(to bottom, #4a2d2d, #3b2424);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    backdrop-filter: none;
+  }
+
+.content h2 {
+    font-size: 24px;
+    text-transform: lowercase;
+    margin-bottom: 10px;
+}
+
+.content ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.content li {
+    margin: 5px 0;
 }
