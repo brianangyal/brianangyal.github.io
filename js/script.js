@@ -1,3 +1,10 @@
-document.getElementById('enter-text').addEventListener('click', function() {
-    window.location.href = "home.html";  // it goes to a new page called home.html
+document.getElementById('enter-screen').addEventListener('click', () => {
+    document.getElementById('enter-screen').style.display = 'none';
+    document.getElementById('video-bg').style.display = 'block';
+    document.querySelector('.overlay').style.display = 'block';
+    document.querySelector('.content').style.display = 'block';
+
+    const video = document.getElementById('video-bg');
+    video.muted = false;
+    video.play();
   });
