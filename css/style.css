@@ -3,7 +3,8 @@ html, body {
     padding: 0;
     height: 100%;
     overflow: hidden;
-    font-family: sans-serif;
+    font-family: 'Poppins', sans-serif;
+    background-color: black;
 }
 
 #enter-screen {
@@ -36,23 +37,26 @@ html, body {
     display: block;
     text-align: left;
     padding-top: 10vh;
-    color: black;
-  }
+    color: white;
+}
 
 .content section {
     margin: 40px 0 40px 40px;
     max-width: 400px;
-    background: linear-gradient(to bottom, #4a2d2d, #3b2424);
+    background: linear-gradient(to bottom, #3d2525, #2a1a1a);
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 12px;
     color: white;
-    backdrop-filter: none;
-  }
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.1);
+    backdrop-filter: blur(6px);
+}
 
 .content h2 {
-    font-size: 24px;
+    font-size: 22px;
     text-transform: lowercase;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
+    color: #ffffff;
+    font-weight: 600;
 }
 
 .content ul {
@@ -61,28 +65,29 @@ html, body {
 }
 
 .content li {
-    margin: 5px 0;
-}
-
-#socials h2 {
-    color: white;
+    margin: 6px 0;
 }
 
 #socials .social-links {
     list-style: none;
     padding-left: 0;
-    margin-top: 10px;
+    margin-top: 12px;
 }
 
 #socials .social-links li {
-    margin-bottom: 6px;
+    margin-bottom: 8px;
 }
 
-#socials .social-links a, p {
-    color: red;
+#socials .social-links a {
+    color: #ff4d4d;
     text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease-in-out;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.5px;
 }
 
 #socials .social-links a:hover {
+    color: #ffffff;
     text-decoration: underline;
 }
