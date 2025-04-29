@@ -4,7 +4,6 @@ html, body {
     height: 100%;
     overflow: hidden;
     font-family: 'Poppins', sans-serif;
-    background-color: black;
 }
 
 #enter-screen {
@@ -78,7 +77,7 @@ html, body {
     margin-bottom: 8px;
 }
 
-#socials .social-links a {
+#socials .social-links a, p {
     color: #ff4d4d;
     text-decoration: none;
     font-weight: 500;
