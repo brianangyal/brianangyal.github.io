@@ -1,3 +1,4 @@
+window.scrollTo(0, 0);
 document.getElementById('enter-screen').addEventListener('click', () => {
     const video = document.getElementById('video-bg');
     const videoFiles = [
