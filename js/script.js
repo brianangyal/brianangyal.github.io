@@ -7,8 +7,7 @@ document.getElementById('enter-screen').addEventListener('click', () => {
         "paris.mp4",
         "stronger.mp4",
         "franchise.mp4",
-        "wokeuplikethis.mp4",
-        "myheart.mp4"
+        "wokeuplikethis.mp4"
     ];
     const selected = videoFiles[Math.floor(Math.random() * videoFiles.length)];
     
@@ -19,7 +18,7 @@ document.getElementById('enter-screen').addEventListener('click', () => {
     document.getElementById('enter-screen').style.display = 'none';
     video.style.display = 'block';
     document.querySelector('.content').style.display = 'block';
-    document.getElementById('mute-btn').style.display = 'block';
+    document.getElementById('mute').style.display = 'block';
 
     document.documentElement.classList.add('entered');
     document.body.classList.add('entered');
@@ -29,13 +28,10 @@ document.getElementById('enter-screen').addEventListener('click', () => {
     });
 
     document.getElementById('mute-toggle').addEventListener('click', () => {
-        const video = document.getElementById('video-bg');
-    
+        const jokes = ["blasphemy", "nah", "lol no", "volume up!", "too bad"];
+        const label = jokes[Math.floor(Math.random() * jokes.length)];
         video.muted = false;
         video.volume = 1;
-    
-        const jokes = ["nah", "blasphemy", "too bad", "lol no", "lets make it louder"];
-        const label = jokes[Math.floor(Math.random() * jokes.length)];
         document.getElementById('mute-toggle').textContent = label;
     });
 
@@ -47,15 +43,15 @@ document.getElementById('enter-screen').addEventListener('click', () => {
 
             const art = document.getElementById("album-art");
             if (data.image) {
-            art.src = data.image;
-            art.style.display = "block";
+                art.src = data.image;
+                art.style.display = "block";
             } else {
-            art.style.display = "none";
+                art.style.display = "none";
             }
         })
         .catch(() => {
             document.getElementById("track").textContent = "Offline";
             document.getElementById("artist").textContent = "";
-    });
+        });
 });
 

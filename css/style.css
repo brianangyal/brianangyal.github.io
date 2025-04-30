@@ -40,7 +40,6 @@ html.entered, body.entered {
     z-index: 1;
     display: block;
     text-align: left;
-    padding-top: 10vh;
     color: white;
 }
 
@@ -111,22 +110,25 @@ html.entered, body.entered {
     transition: color 0.2s ease-in-out;
 }
 
-#mute-btn {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    display: none;
+#mute-toggle {
+    color: #ff4d4d;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    font-size: 16px;
+    margin: 0;
+    transition: color 0.2s ease-in-out;
+    display: inline-block;
 }
 
-#mute-toggle {
+#mute {
     background: none;
-    border: none;
-    color: red;
-    font-family: 'Courier New', monospace;
-    font-size: 16px;
-    cursor: pointer;
-    z-index: 3;
+    box-shadow: none;
     padding: 0;
+    margin: 40px 0 0 40px;
+    max-width: none;
+    backdrop-filter: none;
 }
 
 #mute-toggle:hover {
