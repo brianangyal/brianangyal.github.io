@@ -6,7 +6,8 @@ document.getElementById('enter-screen').addEventListener('click', () => {
         "mercy.mp4",
         "paris.mp4",
         "stronger.mp4",
-        "franchise.mp4"
+        "franchise.mp4",
+        "wokeuplikethis.mp4"
     ];
     const selected = videoFiles[Math.floor(Math.random() * videoFiles.length)];
     
