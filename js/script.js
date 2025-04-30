@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         document.getElementById('mute-toggle').addEventListener('click', () => {
-            const jokes = ["blasphemy", "nah", "lol no", "volume up!", "too bad"];
+            const jokes = ["that's blasphemy", "nah", "lol no", "fuck no"];
             const label = jokes[Math.floor(Math.random() * jokes.length)];
             video.muted = false;
             video.volume = 1;
