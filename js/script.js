@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const selected = videoFiles[Math.floor(Math.random() * videoFiles.length)];
         
         video.muted = false;
+        video.pause();
         video.querySelector("source").src = `videos/${selected}`;
         video.load();
 
