@@ -28,7 +28,14 @@ document.getElementById('enter-screen').addEventListener('click', () => {
     });
 
     document.getElementById('mute-toggle').addEventListener('click', () => {
-        alert("no lol.");
+        const video = document.getElementById('video-bg');
+    
+        video.muted = false;
+        video.volume = 1;
+    
+        const jokes = ["nah", "blasphemy", "too bad", "lol no", "lets make it louder"];
+        const label = jokes[Math.floor(Math.random() * jokes.length)];
+        document.getElementById('mute-toggle').textContent = label;
     });
 
     fetch("https://lastfm-white-snow-97b9.brianbs297.workers.dev")
