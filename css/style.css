@@ -134,3 +134,70 @@ html.entered, body.entered {
 #mute-toggle:hover {
     text-decoration: underline;
 }
+
+
+
+
+@media (max-width: 768px) {
+    #enter-screen {
+        font-size: 32px;
+        line-height: 100vh;
+    }
+
+    .content {
+        padding-top: 5vh;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .content section {
+        margin: 20px 0;
+        max-width: 100%;
+    }
+
+    #mute {
+        margin: 20px 0 0 20px;
+    }
+
+    #last-played {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    #album-art {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+@media (max-width: 480px) {
+    #enter-screen {
+        font-size: 26px;
+    }
+
+    .content h2 {
+        font-size: 18px;
+    }
+
+    #mute-toggle {
+        font-size: 14px;
+    }
+
+    #album-art {
+        width: 40px;
+        height: 40px;
+    }
+
+    .content section {
+        padding: 15px;
+    }
+
+    #last-played h2 {
+        font-size: 16px;
+    }
+
+    #last-played p {
+        font-size: 14px;
+    }
+}
