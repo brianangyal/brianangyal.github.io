@@ -2,13 +2,13 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow: hidden;
+    overflow: hidden !important;
     font-family: 'Poppins', sans-serif;
 }
 
 html.entered, body.entered {
-    overflow-y: auto;
-    height: auto;
+    overflow: hidden;
+    height: 100%;
 }
 
 #enter-screen {
@@ -46,7 +46,7 @@ html.entered, body.entered {
 .content section {
     margin: 40px 0 40px 40px;
     max-width: 400px;
-    background: linear-gradient(to bottom, #3d2525, #2a1a1a);
+    background: rgba(30, 10, 10, 0.35);
     padding: 20px;
     border-radius: 12px;
     color: white;
@@ -135,9 +135,44 @@ html.entered, body.entered {
     text-decoration: underline;
 }
 
+@media (min-width: 769px) {
+    #listening-to {
+        position: fixed;
+        bottom: 16px;
+        right: 20px;
+        margin: 0 !important;
+        background: rgba(20, 20, 20, 0.6);
+        backdrop-filter: blur(6px);
+        padding: 10px 16px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: white;
+        z-index: 999;
+        max-width: 300px;
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
+    }
 
+    #listening-to h2 {
+        font-size: 16px;
+        margin-bottom: 4px;
+    }
 
+    #listening-to p {
+        font-size: 14px;
+        margin: 0;
+    }
 
+    #album-art {
+        width: 48px;
+        height: 48px;
+        border-radius: 8px;
+        display: block;
+    }
+}
+
+/* mobile */
 @media (max-width: 768px) {
     #enter-screen {
         font-size: 32px;
@@ -159,7 +194,7 @@ html.entered, body.entered {
         margin: 20px 0 0 20px;
     }
 
-    #last-played {
+    #last-played, #listening-to {
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
@@ -193,11 +228,13 @@ html.entered, body.entered {
         padding: 15px;
     }
 
-    #last-played h2 {
+    #last-played h2,
+    #listening-to h2 {
         font-size: 16px;
     }
 
-    #last-played p {
+    #last-played p,
+    #listening-to p {
         font-size: 14px;
     }
 }
