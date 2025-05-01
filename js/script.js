@@ -50,6 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         document.documentElement.classList.add('entered');
         document.body.classList.add('entered');
+        document.title = "hi";
 
         video.play().catch((error) => {
             console.error("Playback failed:", error);
@@ -70,6 +71,8 @@ document.addEventListener("DOMContentLoaded", () => {
                         <source src="videos/onsight.mp3" type="audio/mp3">
                     </audio>
                 `;
+            } else {
+                document.title = "good choice";
             }
         });
 
