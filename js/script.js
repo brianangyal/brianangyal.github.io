@@ -54,19 +54,23 @@ document.addEventListener("DOMContentLoaded", () => {
             console.error("Playback failed:", error);
         });
 
-        let muteClicksRemaining = 1000;
         document.getElementById('mute-toggle').addEventListener('click', () => {
-            if (muteClicksRemaining > 1) {
-                muteClicksRemaining--;
-                document.getElementById('mute-toggle').textContent = `click this ${muteClicksRemaining} more times to mute the audio`;
-            } else {
-                const video = document.getElementById('video-bg');
-                video.muted = true;
-                video.volume = 0;
-                document.getElementById('mute-toggle').textContent = "muted. you win.";
+            const confirmMute = confirm("Are you sure?");
+            if (confirmMute) {
+                document.title = "wrong answer";
+                document.body.style.cursor = "none";
+                document.body.style.margin = "0";
+                document.body.style.backgroundColor = "black";
+                document.documentElement.style.overflow = "hidden";
+        
+                document.body.innerHTML = `
+                    <img src="img/kanye.jpg" id="kanye-img" style="position:fixed;top:0;left:0;width:100vw;height:100vh;object-fit:cover;z-index:9999;">
+                    <audio autoplay loop>
+                        <source src="videos/onsight.mp3" type="audio/mp3">
+                    </audio>
+                `;
             }
         });
-
         updateListeningInfo();
         setInterval(updateListeningInfo, 5000);
 
