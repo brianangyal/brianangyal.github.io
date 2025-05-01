@@ -20,9 +20,10 @@ function updateListeningInfo() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    window.scrollTo(0, 0);
     document.getElementById('enter-screen').addEventListener('click', () => {
         const video = document.getElementById('video-bg');
+        updateListeningInfo();
+        setInterval(updateListeningInfo, 5000);
         const videoFiles = [
             "heaven.mp4",
             "blkkk.mp4",
@@ -71,8 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 `;
             }
         });
-        updateListeningInfo();
-        setInterval(updateListeningInfo, 5000);
+
 
     });
 });
