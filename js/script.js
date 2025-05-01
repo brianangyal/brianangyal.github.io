@@ -58,20 +58,26 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         document.getElementById('mute-toggle').addEventListener('click', () => {
-            const confirmMute = confirm("Are you sure?");
+            const confirmMute = confirm("Are you sure you wanna do this?");
             if (confirmMute) {
-                document.title = "wrong answer";
+
+                document.title = "YEEZY SEASON APPROACHIN'";
                 document.body.style.cursor = "none";
                 document.body.style.margin = "0";
                 document.body.style.backgroundColor = "black";
                 document.documentElement.style.overflow = "hidden";
         
+                if (document.documentElement.requestFullscreen) {
+                    document.documentElement.requestFullscreen();
+                }
+        
                 document.body.innerHTML = `
-                    <img src="img/kanye.jpg" id="kanye-img" style="position:fixed;top:0;left:0;width:100vw;height:100vh;object-fit:cover;z-index:9999;">
+                    <img src="img/kanye.jpg" id="kanye-img"
+                        style="position:fixed;top:0;left:0;width:100vw;height:100vh;object-fit:cover;z-index:9999;">
                     <audio autoplay loop>
                         <source src="videos/onsight.mp3" type="audio/mp3">
-                    </audio>
-                `;
+                    </audio>`;
+        
             } else {
                 document.title = "good choice";
             }
