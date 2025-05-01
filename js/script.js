@@ -55,12 +55,17 @@ document.addEventListener("DOMContentLoaded", () => {
             console.error("Playback failed:", error);
         });
 
+        let muteClicksRemaining = 1000;
         document.getElementById('mute-toggle').addEventListener('click', () => {
-            const jokes = ["that's blasphemy", "nah", "lol no", "fuck no"];
-            const label = jokes[Math.floor(Math.random() * jokes.length)];
-            video.muted = false;
-            video.volume = 1;
-            document.getElementById('mute-toggle').textContent = label;
+            if (muteClicksRemaining > 1) {
+                muteClicksRemaining--;
+                document.getElementById('mute-toggle').textContent = `click this ${muteClicksRemaining} more times to mute the audio`;
+            } else {
+                const video = document.getElementById('video-bg');
+                video.muted = true;
+                video.volume = 0;
+                document.getElementById('mute-toggle').textContent = "muted. you win.";
+            }
         });
 
         updateListeningInfo();
