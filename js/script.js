@@ -76,7 +76,5 @@ document.addEventListener("DOMContentLoaded", () => {
                 document.title = "good choice";
             }
         });
-
-
     });
 });
