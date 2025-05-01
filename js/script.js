@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         updateListeningInfo();
-        setInterval(updateListeningInfo, 15000);
+        setInterval(updateListeningInfo, 5000);
 
     });
 });
