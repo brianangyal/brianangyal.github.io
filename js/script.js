@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('enter-screen').addEventListener('click', () => {
         const video = document.getElementById('video-bg');
         updateListeningInfo();
-        setInterval(updateListeningInfo, 5000);
+        setInterval(updateListeningInfo, 15000);
         const videoFiles = [
             "heaven.mp4",
             "blkkk.mp4",
