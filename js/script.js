@@ -31,7 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
             "paris.mp4",
             "stronger.mp4",
             "franchise.mp4",
-            "wokeuplikethis.mp4",
             "teainyohood.mp4",
             "nojumper.mp4",
             "keepitburnin.mp4",
