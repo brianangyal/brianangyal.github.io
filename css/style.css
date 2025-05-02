@@ -6,11 +6,6 @@ html, body {
     font-family: 'Poppins', sans-serif;
 }
 
-html.entered, body.entered {
-    overflow: hidden;
-    height: 100%;
-}
-
 #enter-screen {
     background: black;
     color: red;
@@ -136,6 +131,12 @@ html.entered, body.entered {
 }
 
 @media (min-width: 769px) {
+
+    html.entered, body.entered {
+        overflow: hidden;
+        height: 100%;
+    }
+
     #listening-to {
         position: fixed;
         bottom: 16px;
@@ -174,6 +175,12 @@ html.entered, body.entered {
 
 /* mobile */
 @media (max-width: 768px) {
+
+    html.entered, body.entered {
+        overflow-y: auto;
+        height: auto;
+    }
+    
     #enter-screen {
         font-size: 32px;
         line-height: 100vh;
