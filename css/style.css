@@ -177,10 +177,10 @@ html, body {
 @media (max-width: 768px) {
 
     html.entered, body.entered {
-        overflow-y: auto;
-        height: auto;
+        overflow-y: auto !important;
+        height: auto !important;
     }
-    
+
     #enter-screen {
         font-size: 32px;
         line-height: 100vh;
