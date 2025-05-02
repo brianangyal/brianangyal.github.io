@@ -67,10 +67,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 document.body.style.backgroundColor = "black";
                 document.documentElement.style.overflow = "hidden";
         
-                if (document.documentElement.requestFullscreen) {
-                    document.documentElement.requestFullscreen();
-                }
-        
                 document.body.innerHTML = `
                     <img src="img/kanye.jpg" id="kanye-img"
                         style="position:fixed;top:0;left:0;width:100vw;height:100vh;object-fit:cover;z-index:9999;">
