@@ -13,10 +13,6 @@ function updateListeningInfo() {
                 art.style.display = "none";
             }
         })
-        .catch(() => {
-            document.getElementById("track").textContent = "Offline";
-            document.getElementById("artist").textContent = "";
-        });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
