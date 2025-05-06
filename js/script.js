@@ -15,6 +15,28 @@ function updateListeningInfo() {
         })
 }
 
+function sohelpmegod(video) {
+    video.style.display = 'none';
+
+    const img = document.createElement('img');
+    img.src = 'img/sohelpmegod.jpg';
+    img.style.position = 'fixed';
+    img.style.top = 0;
+    img.style.left = 0;
+    img.style.width = '100vw';
+    img.style.height = '100vh';
+    img.style.objectFit = 'cover';
+    img.style.zIndex = 9999;
+    document.body.appendChild(img);
+
+    setTimeout(() => {
+        img.remove();
+        video.style.display = 'block';
+        video.currentTime = 0;
+        video.play().catch(console.error);
+    }, 5000);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('enter-screen').addEventListener('click', () => {
         const video = document.getElementById('video-bg');
@@ -33,6 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ];
         const selected = videoFiles[Math.floor(Math.random() * videoFiles.length)];
         
+        video.loop = selected !== "ifeellikethat.mp4"
         video.muted = false;
         video.pause();
         video.querySelector("source").src = `videos/${selected}`;
@@ -41,18 +64,26 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById('enter-screen').style.display = 'none';
         video.style.display = 'block';
         document.querySelector('.content').style.display = 'block';
+
         if (selected !== "ifeellikethat.mp4") {
+
             document.getElementById('mute').style.display = 'block';
             document.title = "hello.";
             document.documentElement.classList.add('entered');
             document.body.classList.add('entered');
+
             updateListeningInfo();
             setInterval(updateListeningInfo, 15000);
         } else {
+
             document.querySelectorAll('body > *:not(#video-bg)').forEach(el => el.remove());
             document.title = '';
             document.documentElement.classList.add('entered');
             document.body.classList.add('entered');
+
+            video.addEventListener("ended", () => {
+                sohelpmegod(video);
+            });
         }
 
         video.play().catch((error) => {
