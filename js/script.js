@@ -27,6 +27,10 @@ function sohelpmegod(video) {
     img.style.height = '100vh';
     img.style.objectFit = 'cover';
     img.style.zIndex = 9999;
+    if (window.innerWidth <= 768) {
+        img.style.transform = 'scale(0.9)';
+        img.style.transformOrigin = 'center';
+    }
     document.body.appendChild(img);
 
     setTimeout(() => {
