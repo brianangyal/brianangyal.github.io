@@ -18,8 +18,6 @@ function updateListeningInfo() {
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('enter-screen').addEventListener('click', () => {
         const video = document.getElementById('video-bg');
-        updateListeningInfo();
-        setInterval(updateListeningInfo, 15000);
         const videoFiles = [
             "heaven.mp4",
             "blkkk.mp4",
@@ -48,6 +46,8 @@ document.addEventListener("DOMContentLoaded", () => {
             document.title = "hello.";
             document.documentElement.classList.add('entered');
             document.body.classList.add('entered');
+            updateListeningInfo();
+            setInterval(updateListeningInfo, 15000);
         } else {
             document.querySelectorAll('body > *:not(#video-bg)').forEach(el => el.remove());
             document.title = '';
@@ -59,14 +59,12 @@ document.addEventListener("DOMContentLoaded", () => {
             console.error("Playback failed:", error);
         });
 
-        document.getElementById('mute-toggle').addEventListener('click', () => {
-            if (video.muted == false) {
-                video.muted = true;
-                document.getElementById('mute-toggle').innerText = 'click me to unmute music'
-            } else {
-                video.muted = false;
-                document.getElementById('mute-toggle').innerText = 'click me to mute music'
-            }
-        });
+        const muteToggle = document.getElementById('mute-toggle');
+        if (selected !== "ifeellikethat.mp4" && muteToggle) {
+            muteToggle.addEventListener('click', () => {
+                video.muted = !video.muted;
+                muteToggle.innerText = video.muted ? 'click me to unmute music' : 'click me to mute music';
+            });
+        }
     });
 });
