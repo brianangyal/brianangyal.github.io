@@ -37,6 +37,10 @@ function sohelpmegod(video) {
     }, 5000);
 }
 
+window.addEventListener("load", () => {
+    window.scrollTo(0, 0);
+});
+
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById('enter-screen').addEventListener('click', () => {
         const video = document.getElementById('video-bg');
