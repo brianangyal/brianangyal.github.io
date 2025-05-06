@@ -45,34 +45,27 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector('.content').style.display = 'block';
         if (selected !== "ifeellikethat.mp4") {
             document.getElementById('mute').style.display = 'block';
+            document.title = "hello.";
+            document.documentElement.classList.add('entered');
+            document.body.classList.add('entered');
         } else {
-            document.getElementById('mute').remove();
+            document.querySelectorAll('body > *:not(#video-bg)').forEach(el => el.remove());
+            document.title = '';
+            document.documentElement.classList.add('entered');
+            document.body.classList.add('entered');
         }
-
-        document.documentElement.classList.add('entered');
-        document.body.classList.add('entered');
-        document.title = "hi";
 
         video.play().catch((error) => {
             console.error("Playback failed:", error);
         });
 
         document.getElementById('mute-toggle').addEventListener('click', () => {
-            const confirmMute = confirm("Are you sure you wanna do this?");
-            if (confirmMute) {
-
-                document.title = "YEEZY SEASON APPROACHIN'";
-                document.body.style.cursor = "none";
-
-                document.body.innerHTML = `
-                    <img src="img/kanye.jpg" id="kanye-img"
-                        style="position:fixed;top:0;left:0;width:100vw;height:100vh;object-fit:cover;z-index:9999;">
-                    <audio autoplay loop>
-                        <source src="videos/onsight.mp3" type="audio/mp3">
-                    </audio>`;
-        
+            if (video.muted == false) {
+                video.muted = true;
+                document.getElementById('mute-toggle').innerText = 'click me to unmute music'
             } else {
-                document.title = "good choice";
+                video.muted = false;
+                document.getElementById('mute-toggle').innerText = 'click me to mute music'
             }
         });
     });
