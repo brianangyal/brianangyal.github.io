@@ -183,7 +183,8 @@ html, body {
 
     #enter-screen {
         font-size: 32px;
-        line-height: 100vh;
+        line-height: 100svh;
+        height: 100svh;
     }
 
     .content {
