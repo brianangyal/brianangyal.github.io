@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
             "nojumper.mp4",
             "keepitburnin.mp4",
             "pissonyourgrave.mp4",
-            "myheart.mp4"
+            "ifeellikethat.mp4"
         ];
         const selected = videoFiles[Math.floor(Math.random() * videoFiles.length)];
         
@@ -43,7 +43,11 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById('enter-screen').style.display = 'none';
         video.style.display = 'block';
         document.querySelector('.content').style.display = 'block';
-        document.getElementById('mute').style.display = 'block';
+        if (selected !== "ifeellikethat.mp4") {
+            document.getElementById('mute').style.display = 'block';
+        } else {
+            document.getElementById('mute').remove();
+        }
 
         document.documentElement.classList.add('entered');
         document.body.classList.add('entered');
