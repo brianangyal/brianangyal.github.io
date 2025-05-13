@@ -34,7 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
             "keepitburnin.mp4",
             "pissonyourgrave.mp4",
             "ifeellikethat.mp4",
-            "allday.mp4"
+            "allday.mp4",
+            "onlyone.mp4"
         ];
         const selected = videoFiles[Math.floor(Math.random() * videoFiles.length)];
         
