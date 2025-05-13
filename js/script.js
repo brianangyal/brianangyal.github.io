@@ -15,28 +15,6 @@ function updateListeningInfo() {
         })
 }
 
-function sohelpmegod(video) {
-    video.style.display = 'none';
-
-    const img = document.createElement('img');
-    img.src = 'img/sohelpmegod.jpg';
-    img.style.position = 'fixed';
-    img.style.top = 0;
-    img.style.left = 0;
-    img.style.width = '100vw';
-    img.style.height = '100vh';
-    img.style.objectFit = 'cover';
-    img.style.zIndex = 9999;
-    document.body.appendChild(img);
-
-    setTimeout(() => {
-        img.remove();
-        video.style.display = 'block';
-        video.currentTime = 0;
-        video.play().catch(console.error);
-    }, 5000);
-}
-
 window.addEventListener("load", () => {
     window.scrollTo(0, 0);
 });
@@ -55,7 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
             "nojumper.mp4",
             "keepitburnin.mp4",
             "pissonyourgrave.mp4",
-            "ifeellikethat.mp4"
+            "ifeellikethat.mp4",
+            "allday.mp4"
         ];
         const selected = videoFiles[Math.floor(Math.random() * videoFiles.length)];
         
@@ -84,10 +63,6 @@ document.addEventListener("DOMContentLoaded", () => {
             document.title = '';
             document.documentElement.classList.add('entered');
             document.body.classList.add('entered');
-
-            video.addEventListener("ended", () => {
-                sohelpmegod(video);
-            });
         }
 
         video.play().catch((error) => {
