@@ -32,7 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
         "eazy.mp4",
         "pokerface.mp4",
         "keepitburnin.mp4",
-        "pissonyourgrave.mp4",
         "allday.mp4",
         "onlyone.mp4"
     ];
