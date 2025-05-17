@@ -20,57 +20,59 @@ window.addEventListener("load", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
+    const video = document.getElementById('video-bg');
+    const videoFiles = [
+        "heaven.mp4",
+        "blkkk.mp4",
+        "mercy.mp4",
+        "paris.mp4",
+        "franchise.mp4",
+        "keepitburnin.mp4",
+        "pissonyourgrave.mp4",
+        "allday.mp4",
+        "onlyone.mp4"
+    ];
+    let currentIndex = Math.floor(Math.random() * videoFiles.length);
+
+    function playNextVideo() {
+        currentIndex = (currentIndex + 1) % videoFiles.length;
+        video.querySelector("source").src = `videos/${videoFiles[currentIndex]}`;
+        video.load();
+        video.play().catch(console.error);
+    }
+
     document.getElementById('enter-screen').addEventListener('click', () => {
-        const video = document.getElementById('video-bg');
-        const videoFiles = [
-            "heaven.mp4",
-            "blkkk.mp4",
-            "mercy.mp4",
-            "paris.mp4",
-            "franchise.mp4",
-            "keepitburnin.mp4",
-            "pissonyourgrave.mp4",
-            "allday.mp4",
-            "onlyone.mp4"
-        ];
-        const selected = videoFiles[Math.floor(Math.random() * videoFiles.length)];
-        
-        video.loop = selected !== "ifeellikethat.mp4"
+        video.loop = false;
         video.muted = false;
         video.pause();
-        video.querySelector("source").src = `videos/${selected}`;
+        video.querySelector("source").src = `videos/${videoFiles[currentIndex]}`;
         video.load();
 
         document.getElementById('enter-screen').style.display = 'none';
         video.style.display = 'block';
         document.querySelector('.content').style.display = 'block';
 
-        if (selected !== "ifeellikethat.mp4") {
+        document.getElementById('mute').style.display = 'block';
+        document.title = "hello.";
+        document.documentElement.classList.add('entered');
+        document.body.classList.add('entered');
 
-            document.getElementById('mute').style.display = 'block';
-            document.title = "hello.";
-            document.documentElement.classList.add('entered');
-            document.body.classList.add('entered');
-
-            updateListeningInfo();
-            setInterval(updateListeningInfo, 15000);
-        } else {
-
-            document.querySelectorAll('body > *:not(#video-bg)').forEach(el => el.remove());
-            document.title = '';
-            document.documentElement.classList.add('entered');
-            document.body.classList.add('entered');
-        }
+        updateListeningInfo();
+        setInterval(updateListeningInfo, 15000);
 
         video.play().catch((error) => {
             console.error("Playback failed:", error);
         });
 
+        video.addEventListener("ended", playNextVideo);
+
         const muteToggle = document.getElementById('mute-toggle');
-        if (selected !== "ifeellikethat.mp4" && muteToggle) {
+        if (muteToggle) {
             muteToggle.addEventListener('click', () => {
                 video.muted = !video.muted;
-                muteToggle.innerText = video.muted ? 'click me to unmute music' : 'click me to mute music';
+                muteToggle.innerText = video.muted
+                    ? 'click me to unmute music'
+                    : 'click me to mute music';
             });
         }
     });
