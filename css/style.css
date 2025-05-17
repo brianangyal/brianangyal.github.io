@@ -21,7 +21,7 @@ html, body {
 }
 */
 #enter-screen {
-    background: black url('../background.gif') center center / cover no-repeat;
+    background: black center center / cover no-repeat;
     color: red;
     font-size: 50px;
     text-align: center;
