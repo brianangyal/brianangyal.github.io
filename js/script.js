@@ -37,7 +37,12 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentIndex = Math.floor(Math.random() * videoFiles.length);
 
     function playNextVideo() {
-        currentIndex = (currentIndex + 1) % videoFiles.length;
+        let nextIndex;
+        do {
+            nextIndex = Math.floor(Math.random() * videoFiles.length);
+        } while (nextIndex === currentIndex);
+
+        currentIndex = nextIndex;
         video.querySelector("source").src = `videos/${videoFiles[currentIndex]}`;
         video.load();
         video.play().catch(console.error);
@@ -55,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector('.content').style.display = 'block';
 
         document.getElementById('mute').style.display = 'block';
-        document.title = "hello.";
+        document.title = "hehe.";
         document.documentElement.classList.add('entered');
         document.body.classList.add('entered');
 
