@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.classList.add('entered');
 
         updateListeningInfo();
-        setInterval(updateListeningInfo, 15000);
+        setInterval(updateListeningInfo, 5000);
 
         video.play().catch((error) => {
             console.error("Playback failed:", error);
