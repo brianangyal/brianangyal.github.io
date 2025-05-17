@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "paris.mp4",
         "keepup.mp4",
         "franchise.mp4",
+        "pokerface.mp4",
         "keepitburnin.mp4",
         "pissonyourgrave.mp4",
         "allday.mp4",
