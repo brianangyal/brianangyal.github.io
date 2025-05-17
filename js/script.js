@@ -72,8 +72,8 @@ document.addEventListener("DOMContentLoaded", () => {
             muteToggle.addEventListener('click', () => {
                 video.muted = !video.muted;
                 muteToggle.innerText = video.muted
-                    ? 'click me to unmute music'
-                    : 'click me to mute music';
+                    ? 'unmute music'
+                    : 'mute music';
             });
         }
     });
