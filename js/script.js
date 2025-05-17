@@ -34,7 +34,8 @@ window.addEventListener("load", () => {
 const gifs = [
     'gifs/burnin.gif',
     'gifs/eazy.gif',
-    'gifs/umhey.gif'
+    'gifs/umhey.gif',
+    'gifs/mercy.gif'
 ];
 const selectedGif = gifs[Math.floor(Math.random() * gifs.length)];
 document.getElementById('enter-screen').style.backgroundImage = `url('${selectedGif}')`;
