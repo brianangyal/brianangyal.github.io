@@ -53,7 +53,8 @@ const backgroundVideoFiles = [
     "pokerface.webm",
     "keepitburnin.webm",
     "allday.webm",
-    "onlyone.webm"
+    "onlyone.webm",
+    "totheworld.webm"
 ];
 let currentIndex = Math.floor(Math.random() * backgroundVideoFiles.length);
 
