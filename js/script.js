@@ -18,11 +18,11 @@ function updateListeningInfo() {
 function playNextVideo() {
     let nextIndex;
     do {
-        nextIndex = Math.floor(Math.random() * videoFiles.length);
+        nextIndex = Math.floor(Math.random() * backgroundVideoFiles.length);
     } while (nextIndex === currentIndex);
 
     currentIndex = nextIndex;
-    video.querySelector("source").src = `videos/${videoFiles[currentIndex]}`;
+    video.querySelector("source").src = `videos/${backgroundVideoFiles[currentIndex]}`;
     video.load();
     video.play().catch(console.error);
 }
@@ -41,7 +41,7 @@ const selectedGif = gifs[Math.floor(Math.random() * gifs.length)];
 document.getElementById('enter-screen').style.backgroundImage = `url('${selectedGif}')`;
 
 const video = document.getElementById('video-bg');
-const videoFiles = [
+const backgroundVideoFiles = [
     "heaven.webm",
     "blkkk.webm",
     "mercy.webm",
@@ -55,13 +55,13 @@ const videoFiles = [
     "allday.webm",
     "onlyone.webm"
 ];
-let currentIndex = Math.floor(Math.random() * videoFiles.length);
+let currentIndex = Math.floor(Math.random() * backgroundVideoFiles.length);
 
 document.getElementById('enter-screen').addEventListener('click', () => {
     video.loop = false;
     video.muted = false;
     video.pause();
-    video.querySelector("source").src = `videos/${videoFiles[currentIndex]}`;
+    video.querySelector("source").src = `videos/${backgroundVideoFiles[currentIndex]}`;
     video.load();
 
     document.getElementById('enter-screen').style.display = 'none';
