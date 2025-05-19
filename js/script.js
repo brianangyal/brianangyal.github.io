@@ -42,18 +42,18 @@ document.getElementById('enter-screen').style.backgroundImage = `url('${selected
 
 const video = document.getElementById('video-bg');
 const videoFiles = [
-    "heaven.mp4",
-    "blkkk.mp4",
-    "mercy.mp4",
-    "paris.mp4",
-    "keepup.mp4",
-    "franchise.mp4",
-    "redrum.mp4",
-    "eazy.mp4",
-    "pokerface.mp4",
-    "keepitburnin.mp4",
-    "allday.mp4",
-    "onlyone.mp4"
+    "heaven.webm",
+    "blkkk.webm",
+    "mercy.webm",
+    "paris.webm",
+    "keepup.webm",
+    "franchise.webm",
+    "redrum.webm",
+    "eazy.webm",
+    "pokerface.webm",
+    "keepitburnin.webm",
+    "allday.webm",
+    "onlyone.webm"
 ];
 let currentIndex = Math.floor(Math.random() * videoFiles.length);
 
