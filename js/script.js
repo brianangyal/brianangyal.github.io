@@ -36,7 +36,10 @@ const gifs = [
     'gifs/eazy.gif',
     'gifs/umhey.gif',
     'gifs/mercy.gif',
-    'gifs/canttellmenothin.gif'
+    'gifs/canttellmenothin.gif',
+    'gifs/runaway.gif',
+    'gifs/swish.gif',
+    'gifs/yeezus.gif'
 ];
 const selectedGif = gifs[Math.floor(Math.random() * gifs.length)];
 document.getElementById('enter-screen').style.backgroundImage = `url('${selectedGif}')`;
@@ -55,7 +58,8 @@ const backgroundVideoFiles = [
     "keepitburnin.webm",
     "allday.webm",
     "onlyone.webm",
-    "totheworld.webm"
+    "totheworld.webm",
+    "godstest.webm"
 ];
 let currentIndex = Math.floor(Math.random() * backgroundVideoFiles.length);
 
