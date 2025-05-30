@@ -46,20 +46,20 @@ document.getElementById('enter-screen').style.backgroundImage = `url('${selected
 
 const video = document.getElementById('video-bg');
 const backgroundVideoFiles = [
-    "heaven.webm",
+    /*"heaven.webm",
     "blkkk.webm",
     "mercy.webm",
     "paris.webm",
     "keepup.webm",
     "franchise.webm",
-    "redrum.webm",
-    "eazy.webm",
+    "redrum.webm",*/
+    "eazy.webm"/*,
     "pokerface.webm",
-    "keepitburnin.webm",
-    "allday.webm",
+    "keepitburnin.webm",*/
+    ,"allday.webm"/*,
     "onlyone.webm",
     "totheworld.webm",
-    "godstest.webm"
+    "godstest.webm"*/
 ];
 let currentIndex = Math.floor(Math.random() * backgroundVideoFiles.length);
 
