@@ -53,10 +53,11 @@ const backgroundVideoFiles = [
     "keepup.webm",
     "franchise.webm",
     "redrum.webm",*/
-    "eazy.webm"/*,
+    "eazy.webm",/*,
     "pokerface.webm",
     "keepitburnin.webm",*/
-    ,"allday.webm"/*,
+    "allday.webm",
+    "ifeellikethat.webm"/*,
     "onlyone.webm",
     "totheworld.webm",
     "godstest.webm"*/
