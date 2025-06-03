@@ -33,7 +33,7 @@ window.addEventListener("load", () => {
     window.scrollTo(0, 0);
 });
 
-const gifs = [
+const enterBackgrounds = [
     'gifs/burnin.gif',
     'gifs/eazy.gif',
     'gifs/umhey.gif',
@@ -43,8 +43,10 @@ const gifs = [
     'gifs/swish.gif',
     'gifs/yeezus.gif'
 ];
-const selectedGif = gifs[Math.floor(Math.random() * gifs.length)];
-document.getElementById('enter-screen').style.backgroundImage = `url('${selectedGif}')`;
+const selectedBackground = enterBackgrounds[Math.floor(Math.random() * enterBackgrounds.length)];
+
+document.getElementById('enter-screen').style.backgroundImage = `url('${selectedBackground}')`;
+
 
 const video = document.getElementById('video-bg');
 const backgroundVideoFiles = [
@@ -56,8 +58,8 @@ const backgroundVideoFiles = [
     "franchise.webm",
     "redrum.webm",*/
     "eazy.webm",/*,
-    "pokerface.webm",
-    "keepitburnin.webm",*/
+    "pokerface.webm",*/
+    "keepitburnin.webm",
     "allday.webm",
     "ifeellikethat.webm"/*,
     "onlyone.webm",
