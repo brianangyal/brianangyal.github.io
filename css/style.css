@@ -260,3 +260,10 @@ html, body {
         font-size: 14px;
     }
 }
+
+#last-fm-link {
+  all: unset;
+  cursor: pointer;
+  text-decoration: underline;
+  color: inherit;
+}
