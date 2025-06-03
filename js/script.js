@@ -49,9 +49,9 @@ document.getElementById('enter-screen').style.backgroundImage = `url('${selected
 const video = document.getElementById('video-bg');
 const backgroundVideoFiles = [
     /*"heaven.webm",
-    "blkkk.webm",
+    "blkkk.webm",*/
     "mercy.webm",
-    "paris.webm",
+    /*"paris.webm",
     "keepup.webm",
     "franchise.webm",
     "redrum.webm",*/
