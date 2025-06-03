@@ -144,6 +144,27 @@ html, body {
     text-decoration: underline;
 }
 
+#listening-to {
+    display: flex; 
+    align-items: center; 
+    gap: 20px; 
+    color: white;
+}
+
+#last-fm-link {
+  all: unset;
+  cursor: pointer;
+  text-decoration: underline;
+  color: inherit;
+}
+
+#album-art {
+    border-radius: 10px; 
+    display: none;
+    height: 64px;
+    width: 64px;
+}
+
 @media (min-width: 769px) {
 
     html.entered, body.entered {
@@ -259,11 +280,4 @@ html, body {
     #listening-to p {
         font-size: 14px;
     }
-}
-
-#last-fm-link {
-  all: unset;
-  cursor: pointer;
-  text-decoration: underline;
-  color: inherit;
 }
