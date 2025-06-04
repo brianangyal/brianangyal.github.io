@@ -37,8 +37,8 @@ function updateListeningInfo() {
         .then(data => {
             document.getElementById("track").textContent = data.track;
             document.getElementById("artist").textContent = data.artist;
-            document.getElementById("last-fm-link").href = "https://www.last.fm/music/" + data.artist.replace(/\//g, '%2F').replace(/ /g, '+').replace(/\[/g, '%5B').replace(/\]/g, '%5D') + "/_/" + data.track.replace(/\//g, '%2F').replace(/ /g, '+').replace(/\[/g, '%5B').replace(/\]/g, '%5D');
-
+            document.getElementById("last-fm-link").href = "https://www.last.fm/music/" + data.artist.replace(/\+/g, '%252B').replace(/\//g, '%2F').replace(/ /g, '+').replace(/\[/g, '%5B').replace(/\]/g, '%5D') + "/_/" + data.track.replace(/\+/g, '%252B').replace(/\//g, '%2F').replace(/ /g, '+').replace(/\[/g, '%5B').replace(/\]/g, '%5D');
+            
             const art = document.getElementById("album-art");
             if (data.image) {
                 art.src = data.image;
