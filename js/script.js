@@ -104,7 +104,7 @@ document.getElementById('enter-screen').addEventListener('click', () => {
             const titleInterval = getLyrics(null, lyrics);
             video.addEventListener("ended", () => {
                 clearInterval(titleInterval);
-
+                document.title = "😮‍💨";
                 playNextVideo();
             });
         })
