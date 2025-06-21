@@ -1,27 +1,26 @@
 const video = document.getElementById('video-bg');
 const backgroundVideoFiles = [
-    /*"heaven.webm",
-    "blkkk.webm",*/
+    "heaven.webm",
+    "blkkk.webm",
     "mercy.webm",
-    /*"paris.webm",
-    "keepup.webm",
+    "paris.webm",
+    /*"keepup.webm",
     "franchise.webm",
     "redrum.webm",*/
     "eazy.webm",/*,
     "pokerface.webm",*/
     "keepitburnin.webm",
-    "allday.webm"/*,
+    "allday.webm",/*,
     "ifeellikethat.webm",
     "onlyone.webm",
-    "totheworld.webm",
-    "godstest.webm"*/
+    "totheworld.webm",*/
+    "godstest.webm"
 ];
 let currentIndex = Math.floor(Math.random() * backgroundVideoFiles.length);
 
 const enterBackgrounds = [
     'gifs/burnin.gif',
     'gifs/eazy.gif',
-    'gifs/umhey.gif',
     'gifs/mercy.gif',
     'gifs/canttellmenothin.gif',
     'gifs/runaway.gif',
