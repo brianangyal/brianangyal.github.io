@@ -25,7 +25,8 @@ const enterBackgrounds = [
     'gifs/canttellmenothin.gif',
     'gifs/runaway.gif',
     'gifs/swish.gif',
-    'gifs/yeezus.gif'
+    'gifs/yeezus.gif',
+    'gifs/stronger.gif'
 ];
 const selectedBackground = enterBackgrounds[Math.floor(Math.random() * enterBackgrounds.length)];
 document.getElementById('enter-screen').style.backgroundImage = `url('${selectedBackground}')`;
