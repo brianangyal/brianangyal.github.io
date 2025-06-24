@@ -104,13 +104,13 @@ document.getElementById('enter-screen').addEventListener('click', () => {
             const titleInterval = getLyrics(null, lyrics);
             video.addEventListener("ended", () => {
                 clearInterval(titleInterval);
-                document.title = "😮‍💨";
+                document.title = ".";
                 playNextVideo();
             });
         })
         .catch(() => {
             console.log("No lyrics found for this video.");
-            document.title = "😮‍💨";
+            document.title = ".";
             video.addEventListener("ended", playNextVideo);
         });
 
