@@ -5,7 +5,12 @@ let nowPlayingTrackId = null;
 const container = document.getElementById("history-list");
 
 function getTrackId(item) {
-    return item.nowPlaying ? `np-${item.artist} - ${item.track}` : `${item.timestamp}`;
+    
+    if (item.nowPlaying) {
+        return `np-${item.artist} - ${item.track}`;  
+    }  
+
+    return `sc-${item.timestamp}`;
 }
 
 function renderTrack(item, prepend = false) {
@@ -13,8 +18,17 @@ function renderTrack(item, prepend = false) {
     const trackId = getTrackId(item);
 
     if (seenTimestamps.has(trackId)) {
-    
+
+      if (isNowPlaying && nowPlayingTrackId === trackId) {
+
+          const existingElement = document.querySelector(`[data-track-id="${trackId}"]`);
+          if (existingElement && existingElement !== container.firstChild) {
+
+              container.insertBefore(existingElement, container.firstChild);
+          }
+      }
       return;
+
     }
 
     seenTimestamps.add(trackId);
@@ -66,10 +80,15 @@ function renderTrack(item, prepend = false) {
 
     if (isNowPlaying) {
         container.insertBefore(entry, container.firstChild);
-    } else if (prepend && container.firstChild?.dataset.trackId?.startsWith("np-")) {
-        container.insertBefore(entry, container.firstChild.nextSibling);
-    } else if (prepend && container.firstChild) {
-        container.insertBefore(entry, container.firstChild);
+    } else if (prepend) {
+        let insertBefore = container.firstChild;
+        if (nowPlayingTrackId) {
+            const nowPlayingElement = document.querySelector(`[data-track-id="${nowPlayingTrackId}"]`);
+            if (nowPlayingElement) {
+              insertBefore = nowPlayingElement.nextSibling;
+            }
+        }
+        container.insertBefore(entry, insertBefore);
     } else {
         container.appendChild(entry);
     }
@@ -83,26 +102,43 @@ function fetchNewTracks() {
   fetch("https://lastfm-white-snow-97b9.brianbs297.workers.dev/history?page=1")
     .then(res => res.json())
     .then(data => {
-      if (!data || data.length === 0) return;
+      if (!data || data.length === 0) {
+
+        if (nowPlayingTrackId) {
+          const oldNowPlaying = document.querySelector(`[data-track-id="${nowPlayingTrackId}"]`);
+          if (oldNowPlaying) oldNowPlaying.remove();
+          seenTimestamps.delete(nowPlayingTrackId);
+          nowPlayingTrackId = null;
+        }
+        return;
+      }
 
       const nowPlaying = data.find(t => t.nowPlaying);
 
       if (nowPlaying) {
+
         const newId = getTrackId(nowPlaying);
 
         if (nowPlayingTrackId && nowPlayingTrackId !== newId) {
+
           const old = document.querySelector(`[data-track-id="${nowPlayingTrackId}"]`);
           if (old) old.remove();
           seenTimestamps.delete(nowPlayingTrackId);
         }
 
-        nowPlayingTrackId = newId;
         renderTrack(nowPlaying, true);
+        nowPlayingTrackId = newId;
+      } else if (nowPlayingTrackId) {
+
+        const old = document.querySelector(`[data-track-id="${nowPlayingTrackId}"]`);
+        if (old) old.remove();
+        seenTimestamps.delete(nowPlayingTrackId);
+        nowPlayingTrackId = null;
       }
 
       const scrobbled = data
         .filter(t => !t.nowPlaying && t.timestamp)
-        .sort((a, b) => a.timestamp - b.timestamp);
+        .sort((a, b) => b.timestamp - a.timestamp);
 
       scrobbled.forEach(item => renderTrack(item, true));
     })
@@ -116,7 +152,7 @@ function fetchOlderTracks() {
     .then(data => {
       data
         .sort((a, b) => a.timestamp - b.timestamp)
-        .forEach(item => renderTrack(item));
+        .forEach(item => renderTrack(item, false));
     })
     .catch(console.error);
 }
