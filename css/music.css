@@ -108,13 +108,10 @@ body {
     50% { height: 10px; }
 }
 
-
-
-
 @media (max-width: 768px) {
 
-   body {
-        overflow-y: auto !important;
+   #history-list {
+        height: calc(100vh - 275px);
    }
 
 }
