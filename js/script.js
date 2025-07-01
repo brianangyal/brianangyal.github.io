@@ -5,7 +5,6 @@ const backgroundVideoFiles = [
     "mercy.webm",
     "paris.webm",
     "onlyone.webm",
-    "redrum.webm",
     "eazy.webm",
     "keepitburnin.webm",
     "allday.webm",
