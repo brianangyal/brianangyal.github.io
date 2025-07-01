@@ -138,7 +138,7 @@ function fetchNewTracks() {
 
       const scrobbled = data
         .filter(t => !t.nowPlaying && t.timestamp)
-        .sort((a, b) => b.timestamp - a.timestamp);
+        .sort((a, b) => a.timestamp - b.timestamp);
 
       scrobbled.forEach(item => renderTrack(item, true));
     })
