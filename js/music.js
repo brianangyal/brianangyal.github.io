@@ -150,9 +150,7 @@ function fetchOlderTracks() {
   return fetch(`https://lastfm-white-snow-97b9.brianbs297.workers.dev/history?page=${currentPage}`)
     .then(res => res.json())
     .then(data => {
-      data
-        .sort((a, b) => a.timestamp - b.timestamp)
-        .forEach(item => renderTrack(item, false));
+      data.forEach(item => renderTrack(item, false));
     })
     .catch(console.error);
 }
