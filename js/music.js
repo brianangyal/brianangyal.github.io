@@ -12,12 +12,19 @@ function renderTrack(item, prepend = false) {
     const isNowPlaying = item.nowPlaying;
     const trackId = getTrackId(item);
 
-    if (seenTimestamps.has(trackId)) return;
+    if (seenTimestamps.has(trackId)) {
+    
+      return;
+    }
+
     seenTimestamps.add(trackId);
 
     const entry = document.createElement("div");
+
     entry.dataset.trackId = trackId;
-    if (isNowPlaying) entry.classList.add("now-playing");
+    if (isNowPlaying) {
+        entry.classList.add("now-playing");
+    }
 
     if (item.image) {
         const img = document.createElement("img");

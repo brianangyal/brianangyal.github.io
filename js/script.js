@@ -4,29 +4,24 @@ const backgroundVideoFiles = [
     "blkkk.webm",
     "mercy.webm",
     "paris.webm",
-    /*"keepup.webm",
-    "franchise.webm",
-    "redrum.webm",*/
-    "eazy.webm",/*,
-    "pokerface.webm",*/
-    "keepitburnin.webm",
-    "allday.webm",/*,
-    "ifeellikethat.webm",
     "onlyone.webm",
-    "totheworld.webm",*/
+    "redrum.webm",
+    "eazy.webm",
+    "keepitburnin.webm",
+    "allday.webm",
     "godstest.webm"
 ];
 let currentIndex = Math.floor(Math.random() * backgroundVideoFiles.length);
 
 const enterBackgrounds = [
-    'gifs/burnin.gif',
-    'gifs/eazy.gif',
-    'gifs/mercy.gif',
-    'gifs/canttellmenothin.gif',
-    'gifs/runaway.gif',
-    'gifs/swish.gif',
-    'gifs/yeezus.gif',
-    'gifs/stronger.gif'
+    'backgrounds/burnin.gif',
+    'backgrounds/eazy.gif',
+    'backgrounds/mercy.gif',
+    'backgrounds/canttellmenothin.gif',
+    'backgrounds/runaway.gif',
+    'backgrounds/swish.gif',
+    'backgrounds/yeezus.gif',
+    'backgrounds/stronger.gif'
 ];
 const selectedBackground = enterBackgrounds[Math.floor(Math.random() * enterBackgrounds.length)];
 document.getElementById('enter-screen').style.backgroundImage = `url('${selectedBackground}')`;
