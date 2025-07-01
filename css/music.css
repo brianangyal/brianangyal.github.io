@@ -108,10 +108,9 @@ body {
     50% { height: 10px; }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1366px) {
 
-   #history-list {
-        height: calc(100vh - 275px);
-   }
-
+    #history-list {
+        height: calc(100vh - 285px);
+    }
 }

@@ -1,17 +1,3 @@
-const enterBackgrounds = [
-    'backgrounds/burnin.gif',
-    'backgrounds/eazy.gif',
-    'backgrounds/mercy.gif',
-    'backgrounds/canttellmenothin.gif',
-    'backgrounds/runaway.gif',
-    'backgrounds/swish.gif',
-    'backgrounds/yeezus.gif',
-    'backgrounds/stronger.gif'
-];
-const selectedBackground = enterBackgrounds[Math.floor(Math.random() * enterBackgrounds.length)];
-document.getElementById('enter-screen').style.backgroundImage = `url('${selectedBackground}')`;
-
-
 const video = document.getElementById('video-bg');
 const backgroundVideoFiles = [
     "heaven.webm",
@@ -25,6 +11,19 @@ const backgroundVideoFiles = [
     "godstest.webm"
 ];
 let currentIndex = Math.floor(Math.random() * backgroundVideoFiles.length);
+
+const enterBackgrounds = [
+    'backgrounds/burnin.gif',
+    'backgrounds/eazy.gif',
+    'backgrounds/mercy.gif',
+    'backgrounds/canttellmenothin.gif',
+    'backgrounds/runaway.gif',
+    'backgrounds/swish.gif',
+    'backgrounds/yeezus.gif',
+    'backgrounds/stronger.gif'
+];
+const selectedBackground = enterBackgrounds[Math.floor(Math.random() * enterBackgrounds.length)];
+document.getElementById('enter-screen').style.backgroundImage = `url('${selectedBackground}')`;
 
 function updateListeningInfo() {
     fetch("https://lastfm-white-snow-97b9.brianbs297.workers.dev")
