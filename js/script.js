@@ -1,5 +1,8 @@
 const video = document.getElementById('video-bg');
 const backgroundVideoFiles = [
+    "keepitburnin.webm"
+];
+/*const backgroundVideoFiles = [
     "heaven.webm",
     "blkkk.webm",
     "mercy.webm",
@@ -9,7 +12,7 @@ const backgroundVideoFiles = [
     "keepitburnin.webm",
     "allday.webm",
     "godstest.webm"
-];
+];*/
 let currentIndex = Math.floor(Math.random() * backgroundVideoFiles.length);
 
 const enterBackgrounds = [
