@@ -7,13 +7,8 @@ let currentIndex = Math.floor(Math.random() * backgroundVideoFiles.length);
 
 const enterBackgrounds = [
     'backgrounds/burnin.gif',
-    'backgrounds/eazy.gif',
-    'backgrounds/mercy.gif',
-    'backgrounds/canttellmenothin.gif',
-    'backgrounds/runaway.gif',
     'backgrounds/swish.gif',
     'backgrounds/yeezus.gif',
-    'backgrounds/stronger.gif'
 ];
 
 const selectedBackground = enterBackgrounds[Math.floor(Math.random() * enterBackgrounds.length)];
