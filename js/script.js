@@ -1,6 +1,8 @@
 const video = document.getElementById('video-bg');
 const backgroundVideoFiles = [
-    "keepitburnin.webm"
+    "keepitburnin.webm",
+    "heaven.webm",
+    "paris.webm"
 ];
 
 let currentIndex = Math.floor(Math.random() * backgroundVideoFiles.length);
