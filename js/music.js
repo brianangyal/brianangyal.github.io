@@ -172,4 +172,4 @@ container.addEventListener("scroll", () => {
   }
 });
 
-setInterval(fetchNewTracks, 10000);
+setInterval(fetchNewTracks, 15000);
